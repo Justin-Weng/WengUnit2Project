@@ -41,7 +41,11 @@ public class LinearEquationLogic {
             secondY = Integer.parseInt(secondCoord.substring(secondCommaIndex + 2, secondCoord.length() - 1));
 
             if (firstX == secondX) {
-                System.out.println("The 2 points have the same x value and therefore, this is not a function. Try using different points with different x values.");
+                if (firstY == secondY) {
+                    System.out.println("A line requires 2 points to be drawn. The points given are the same so a line is unable to be drawn. Try again using different points.");
+                } else {
+                    System.out.println("This is not a function as the 2 x values have different y values. Try again using different points.");
+                }
             } else {
                 continueLoop = false;
             }
